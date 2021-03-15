@@ -1,12 +1,3 @@
-# Log file
-*.log
-logs/
-
-# Maven
-target/
-
-# Intellij
-*.iml
-*.iws
-*.idea/
-
+/.idea
+/Home_work_1.iml
+/target
