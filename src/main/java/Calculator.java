@@ -2,6 +2,10 @@ public class Calculator {
 
     public static Object calc(Object num1, Object num2, Object operation){
         Object result;
+        if (!(num1 instanceof Float) || !(num2 instanceof Float)){
+            result = "это не числа";
+            return result;
+        }
         switch ((String) operation) {
             case "+":
                 result = sum(num1, num2);
