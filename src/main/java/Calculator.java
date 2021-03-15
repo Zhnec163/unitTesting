@@ -20,11 +20,13 @@ public class Calculator {
         return operation;
     }
 
-    private static Object getNumber(){
+    private static float getNumber(){
         System.out.print("Введите число:");
-        Object number;
+        float number;
         if(scanner.hasNextInt()){
             number = (float)scanner.nextInt();
+        } else if(scanner.hasNextDouble()) {
+            number = (float)scanner.nextDouble(); /////////////////////
         } else if(scanner.hasNextFloat()) {
             number = scanner.nextFloat();
         } else {
@@ -34,20 +36,20 @@ public class Calculator {
         return number;
     }
 
-    private static Object calc(Object num1, Object num2, Object operation){
-        Object result;
-        switch ((char)operation){
+    public static Object calc(Object num1, Object num2, char operation){
+        Object result = 0f;
+        switch (operation){
             case '+':
                 result = sum(num1, num2);
                 break;
             case '-':
-                result = subtract(num1, num2);
+                //result = subtract(num1, num2);
                 break;
             case '*':
-                result = multiply(num1, num2);
+                //result = multiply(num1, num2);
                 break;
             case '/':
-                result = divide(num1, num2);
+                //result = divide(num1, num2);
                 break;
             default:
                 System.out.println("Неверная операция!");
@@ -56,27 +58,19 @@ public class Calculator {
         return result;
     }
 
-    public static Object sum(Object one, Object two) {
-        //System.out.println("Складываем "+ one + " и " + two);
-        int result = (int)one + (int)two;
-        return result;
+    private static Object sum(Object one, Object two) {
+        return (float)one + (float)two;
     }
 
-    public static Object subtract(Object one, Object two) {
-        //System.out.println("Вычитаем "+ one + " и " + two);
-        float result = (float)one - (float)two;
-        return result;
+    private static Object subtract(Object one, Object two) {
+        return (float)one - (float)two;
     }
 
-    public static Object divide(Object one, Object two) {
-        //System.out.println("Делим "+ one + " на " + two);
-        float result = (float)one / (float)two;
-        return result;
+    private static Object divide(Object one, Object two) {
+        return (float)one / (float)two;
     }
 
-    public static Object multiply(Object one, Object two) {
-        //System.out.println("Умножаем "+ one + " и " + two);
-        float result = (float)one * (float)two;
-        return result;
+    private static Object multiply(Object one, Object two) {
+        return (float)one * (float)two;
     }
 }

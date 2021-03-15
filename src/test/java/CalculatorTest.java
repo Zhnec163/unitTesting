@@ -7,16 +7,17 @@ public class CalculatorTest {
     @DataProvider
     public Object[][] testEquals() {
         return new Object[][]{
-                {4, 2, 2},
-                {0, -1, 1},
-                {8, 4, 4},
-                {-1, 0, -1},
-                {5, 2, 3}
+                {"4", "2", "2"},
+                {"0", "-1", "1"},
+                {"4", "2", "2"},
+                {"2", "0.5", "1.5" },
+                {"-100", "-100", "0"},
+                {"-20", "-15.5", "-4.5" }
         };
     }
 
     @Test(dataProvider = "testEquals")
-    public void testEqualsFive(Object one, Object two, Object tree) {
-        Assert.assertEquals((int)one, (int)Calculator.sum(two, tree), "Значения не равны!");
+    public void testEqualsFive(String one, String two, String tree) {
+        Assert.assertEquals(Float.parseFloat(one), Calculator.calc(Float.parseFloat(two), Float.parseFloat(tree), '+'), "Значения не равны!");
     }
 }
