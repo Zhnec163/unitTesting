@@ -1,19 +1,19 @@
 public class Calculator {
 
-    public static Object calc(Object num1, Object num2, char operation){
+    public static Object calc(Object num1, Object num2, Object operation){
         Object result;
-        switch (operation){
-            case '+':
+        switch ((String) operation) {
+            case "+":
                 result = sum(num1, num2);
                 break;
-            case '-':
+            case "-":
                 result = subtract(num1, num2);
                 break;
-            case '*':
+            case "*":
                 result = multiply(num1, num2);
                 break;
-            case '/':
-                if((float)num2 == 0){
+            case "/":
+                if ((float)num2 == 0) {
                     result = "на 0 делить нельзя";
                     break;
                 }
@@ -21,7 +21,6 @@ public class Calculator {
                 break;
             default:
                 result = "не верный оператор";
-                System.out.println("Неверная операция!");
         }
         return result;
     }

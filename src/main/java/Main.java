@@ -8,7 +8,7 @@ public class Main {
 
         float num1 = getNumber();
         float num2 = getNumber();
-        char operator = getOperation();
+        String operator = getOperation();
 
         System.out.println(Calculator.calc(num1, num2, operator));
     }
@@ -27,11 +27,11 @@ public class Main {
         return number;
     }
 
-    private static char getOperation(){
+    private static String getOperation(){
         System.out.print("Введите операцию:");
-        char operation;
+        String operation;
         if(scanner.hasNext()){
-            operation = scanner.next().charAt(0);
+            operation = scanner.next();
         } else {
             scanner.next();
             operation = getOperation();
